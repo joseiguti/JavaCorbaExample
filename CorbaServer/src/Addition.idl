@@ -1,0 +1,28 @@
+/**
+ * Lenguaje de descripción de interfaz o Interface definition language (IDL), 
+ * Como su propio nombre indica un lenguaje de especificación de interfaces que se utiliza en software de computación distribuida. 
+ * Ofrece la sintaxis necesaria para definir los procedimientos o métodos que queremos invocar remotamente. 
+ * Una vez tengamos esta interfaz creada deberemos pasarla por un compilador de interfaces que generará el proxy o stub cliente y el skeleton o stub servidor.
+ * Ejemplo: idlj  -fall  Addition.idl
+ */
+ 
+ /**
+  * El Administrador de servidores incluido con la herramienta orbd se usa para permitir a los clientes localizar e invocar de manera 
+  * transparente los objetos persistentes en servidores en el entorno CORBA. 
+  * Los servidores persistentes, al publicar las referencias de objeto persistentes en el Servicio de nombres, 
+  * incluyen el número de puerto del ORBD en la referencia del objeto en lugar del número de puerto del Servidor.
+  */
+
+    module AdditionApp
+    {
+    
+      interface Addition      
+      {
+        
+        long add(in long a,in long b);
+        
+        oneway void shutdown();
+        
+        };
+        
+    };
